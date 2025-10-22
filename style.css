@@ -1,0 +1,245 @@
+/* style.css (Version "Blocs Futés" - Inspiré LEGO) */
+
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;700&family=Poppins:wght@400;600&display=swap');
+
+:root {
+    --couleur-rouge-lego: #e62325;     /* Rouge vif */
+    --couleur-bleu-lego: #005eb8;      /* Bleu primaire */
+    --couleur-jaune-lego: #fcc200;    /* Jaune vif (Accent principal) */
+    --couleur-texte-sombre: #343a40;
+    --couleur-texte-clair: #ffffff;
+    --couleur-fond-clair: #f8f9fa;
+    --couleur-fond-blanc: #ffffff;
+    --couleur-bordure: #e0e0e0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--couleur-fond-clair);
+    color: var(--couleur-texte-sombre);
+    margin: 0;
+    padding-top: 70px;
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4, .nav-logo {
+    font-family: 'Fredoka', sans-serif; 
+}
+
+/* --- Barre de navigation FIXE --- */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--couleur-bleu-lego); /* Bleu de base */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+.navbar-contenu {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-logo {
+    font-size: 1.6rem;
+    font-weight: 700;
+    background-color: var(--couleur-jaune-lego); /* Logo sur fond Jaune */
+    color: var(--couleur-rouge-lego); /* Texte en Rouge */
+    padding: 3px 8px;
+    border-radius: 4px;
+    line-height: 1;
+    text-decoration: none;
+    letter-spacing: 0.5px;
+}
+
+.nav-links a {
+    color: var(--couleur-texte-clair);
+    text-decoration: none;
+    font-weight: 400;
+    margin-left: 25px;
+    transition: color 0.3s;
+    font-size: 0.95rem;
+}
+
+.nav-links a:hover {
+    color: var(--couleur-jaune-lego);
+}
+
+/* --- Header (Plus de style, moins de surface) --- */
+header {
+    background-color: var(--couleur-fond-blanc);
+    color: var(--couleur-texte-sombre);
+    padding: 2.5rem 0; /* Un peu moins de hauteur */
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    border-bottom: 5px solid var(--couleur-rouge-lego); /* Ligne rouge distinctive */
+}
+
+header h1 {
+    font-size: 2.8rem;
+    margin-bottom: 10px;
+    color: var(--couleur-bleu-lego);
+}
+header p {
+    font-size: 1.2rem;
+    color: #6c757d;
+}
+
+.conteneur {
+    max-width: 1000px;
+    margin: 3rem auto;
+    padding: 0 20px;
+}
+
+/* --- Cartes produits --- */
+.grille-produits {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.carte-produit {
+    background-color: var(--couleur-fond-blanc);
+    border: 1px solid var(--couleur-bordure);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s, box-shadow 0.2s;
+    text-align: center;
+}
+
+.carte-produit:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+}
+
+.carte-produit h3 {
+    background-color: var(--couleur-bleu-lego); /* Titre de carte en bleu */
+    color: var(--couleur-texte-clair);
+    padding: 12px 0;
+    margin: 0;
+    font-size: 1.4rem;
+    font-weight: 500;
+}
+
+.corps-carte {
+    padding: 20px;
+}
+
+.prix {
+    font-size: 2.5rem;
+    color: var(--couleur-rouge-lego); /* Prix en rouge vif */
+    font-weight: 700;
+    margin: 15px 0;
+}
+
+.btn {
+    display: block;
+    background-color: var(--couleur-rouge-lego); /* Bouton en rouge vif */
+    color: var(--couleur-texte-clair);
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 20px;
+    font-weight: 600;
+    transition: background-color 0.3s, transform 0.2s;
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #a31718; /* Rouge plus foncé au survol */
+    transform: translateY(-2px);
+}
+
+/* --- Pages de détails et autres sections --- */
+.details-produit, .info-box {
+    background-color: var(--couleur-fond-blanc);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    border-left: 5px solid var(--couleur-jaune-lego); /* Bordure jaune distinctive */
+}
+.details-produit h1 {
+    color: var(--couleur-bleu-lego);
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.avantages ul {
+    list-style: none;
+    padding: 0;
+}
+
+.avantages li {
+    background: var(--couleur-fond-clair); 
+    color: var(--couleur-texte-sombre);
+    margin-bottom: 10px;
+    padding: 12px;
+    border-radius: 5px;
+    border-left: 4px solid var(--couleur-bleu-lego);
+    font-size: 1rem;
+}
+
+.paypal-btn-container {
+    text-align: center;
+    margin: 40px 0;
+    padding: 30px;
+    background-color: var(--couleur-fond-clair);
+    border-radius: 8px;
+    border: 2px dashed var(--couleur-jaune-lego);
+}
+
+/* Page Confirmation */
+.page-confirmation {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: #e6ffed;
+    border: 2px solid #28a745;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+.page-confirmation h2 {
+    color: #28a745;
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+.page-confirmation strong {
+    color: var(--couleur-bleu-lego);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 1.5rem 0;
+    margin-top: 50px;
+    font-size: 0.9rem;
+    color: #7f8c8d;
+    background-color: #f0f0f0;
+    border-top: 1px solid var(--couleur-bordure);
+}
+footer a {
+    color: #7f8c8d;
+    text-decoration: none;
+    margin: 0 5px;
+}
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Titres de section */
+h2 {
+    color: var(--couleur-rouge-lego);
+    border-bottom: 2px solid var(--couleur-jaune-lego);
+    padding-bottom: 8px;
+    margin-top: 50px;
+    margin-bottom: 30px;
+    font-size: 2rem;
+}
